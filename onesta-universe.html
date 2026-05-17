@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onesta — Brand Universe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amber: #C8860A;
+    --amber-light: #F2B84B;
+    --amber-pale: #FDF3DC;
+    --amber-glow: #FFCF6B;
+    --forest: #2D4A2D;
+    --forest-mid: #3D6B3D;
+    --forest-light: #5A8A5A;
+    --cream: #FAF6EE;
+    --dark: #1A1208;
+    --warm-gray: #8C7B5E;
+    --white: #FFFDF7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(200,134,10,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(45,74,45,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 10% 70%, rgba(45,74,45,0.2) 0%, transparent 60%);
+  }
+
+  /* Honeycomb texture */
+  .honeycomb-bg {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-6l22-12.7V22.7L28 10 6 22.7v24.6L28 60z' fill='%23C8860A'/%3E%3Cpath d='M28 100l-28-16V68l28 16 28-16v16L28 100z' fill='%23C8860A'/%3E%3C/svg%3E");
+  }
+
+  .brand-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(14px, 2vw, 18px);
+    letter-spacing: 0.5em;
+    color: var(--amber-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 110px);
+    font-weight: 700;
+    line-height: 0.9;
+    text-align: center;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+
+  .hero h1 span {
+    color: var(--amber-light);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 300;
+    color: var(--amber-pale);
+    margin-top: 24px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+  }
+
+  .hero-tagline {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .pill {
+    background: rgba(200,134,10,0.2);
+    border: 1px solid rgba(200,134,10,0.4);
+    color: var(--amber-light);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.4s forwards;
+  }
+
+  .scroll-hint span {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--warm-gray);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--amber), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ── SECTION STYLES ── */
+  section {
+    padding: 100px 5vw;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 48px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--amber-light);
+  }
+
+  /* ── CORE BELIEF ── */
+  .belief-section {
+    background: var(--forest);
+    text-align: center;
+  }
+
+  .belief-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 44px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+
+  .belief-quote span { color: var(--amber-glow); }
+
+  /* 3 pillars */
+  .three-words {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+
+  .word-pillar {
+    flex: 1;
+    min-width: 240px;
+    max-width: 320px;
+    padding: 48px 32px;
+    position: relative;
+    border-top: 2px solid transparent;
+    transition: border-color 0.3s;
+    text-align: left;
+  }
+
+  .word-pillar:hover { border-top-color: var(--amber); }
+
+  .word-pillar .word-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(200,134,10,0.15);
+    position: absolute;
+    top: 24px; right: 24px;
+    line-height: 1;
+  }
+
+  .word-pillar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--amber-light);
+    margin-bottom: 8px;
+  }
+
+  .word-pillar .word-sub {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .word-pillar p {
+    font-size: 14px;
+    color: rgba(250,246,238,0.7);
+    line-height: 1.8;
+  }
+
+  /* ── DNA CHAIN ── */
+  .dna-section {
+    background: linear-gradient(180deg, var(--dark) 0%, #0F1A0F 100%);
+  }
+
+  .dna-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .dna-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,134,10,0.1);
+    padding: 40px 32px;
+    transition: all 0.4s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dna-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .dna-card:hover { background: rgba(200,134,10,0.06); transform: translateY(-4px); }
+  .dna-card:hover::before { transform: scaleX(1); }
+
+  .dna-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .dna-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .dna-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(250,246,238,0.6);
+  }
+
+  .dna-card .badge {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+    border-top: 1px solid rgba(200,134,10,0.3);
+    padding-top: 12px;
+  }
+
+  /* ── VIRTUOUS CYCLE ── */
+  .cycle-section {
+    background: var(--dark);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cycle-visual {
+    position: relative;
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
+    margin: 60px auto 0;
+  }
+
+  .cycle-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(200,134,10,0.15);
+  }
+
+  .cycle-ring-1 { inset: 0; animation: spin 60s linear infinite; }
+  .cycle-ring-2 { inset: 10%; animation: spin 45s linear infinite reverse; }
+  .cycle-ring-3 { inset: 20%; animation: spin 30s linear infinite; }
+
+  .cycle-center {
+    position: absolute;
+    inset: 35%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,134,10,0.3), rgba(200,134,10,0.05));
+    border: 2px solid rgba(200,134,10,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cycle-center h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--amber-light);
+    font-style: italic;
+  }
+
+  .cycle-center p {
+    font-size: clamp(9px, 1.2vw, 12px);
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .cycle-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100px;
+  }
+
+  .cycle-node-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--dark);
+    border: 2px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-size: 18px;
+    transition: transform 0.3s;
+  }
+
+  .cycle-node:hover .cycle-node-dot { transform: scale(1.2); }
+
+  .cycle-node span {
+    font-size: clamp(9px, 1.2vw, 12px);
+    color: var(--cream);
+    letter-spacing: 0.05em;
+    display: block;
+    line-height: 1.3;
+  }
+
+  /* ── FOUR LEVELS ── */
+  .levels-section {
+    background: #0A0F0A;
+  }
+
+  .levels-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 60px;
+    max-width: 800px;
+  }
+
+  .level-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+    border-left: 4px solid;
+    transition: all 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .level-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, currentColor, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .level-bar:hover::after { opacity: 0.05; }
+
+  .level-bar:nth-child(1) { border-color: #4A4A4A; background: rgba(74,74,74,0.1); }
+  .level-bar:nth-child(2) { border-color: #8B7355; background: rgba(139,115,85,0.1); }
+  .level-bar:nth-child(3) { border-color: #B8A062; background: rgba(184,160,98,0.1); }
+  .level-bar:nth-child(4) { border-color: var(--amber); background: rgba(200,134,10,0.12); }
+
+  .level-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    min-width: 56px;
+    line-height: 1;
+  }
+
+  .level-bar:nth-child(1) .level-num { color: #4A4A4A; }
+  .level-bar:nth-child(2) .level-num { color: #8B7355; }
+  .level-bar:nth-child(3) .level-num { color: #B8A062; }
+  .level-bar:nth-child(4) .level-num { color: var(--amber); }
+
+  .level-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .level-info p {
+    font-size: 13px;
+    color: rgba(250,246,238,0.5);
+    line-height: 1.6;
+  }
+
+  .level-crown {
+    margin-left: auto;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .level-bar:last-child .level-crown { opacity: 1; }
+
+  /* ── TWO PILLARS ── */
+  .pillars-section {
+    background: var(--forest);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    .pillars-section { grid-template-columns: 1fr; }
+  }
+
+  .pillar-block {
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar-block:first-child {
+    background: rgba(200,134,10,0.08);
+    border-right: 1px solid rgba(200,134,10,0.2);
+  }
+
+  .pillar-block:last-child {
+    background: rgba(45,74,45,0.4);
+  }
+
+  .pillar-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    color: rgba(200,134,10,0.08);
+    position: absolute;
+    top: -20px; right: 20px;
+    line-height: 1;
+  }
+
+  .pillar-tag {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .pillar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .pillar-subtitle {
+    font-size: 13px;
+    color: var(--amber-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .pillar-list {
+    list-style: none;
+  }
+
+  .pillar-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(200,134,10,0.15);
+    font-size: 14px;
+    color: rgba(250,246,238,0.75);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pillar-list li::before {
+    content: '—';
+    color: var(--amber);
+    font-size: 12px;
+  }
+
+  /* ── 5 LOVES ── */
+  .loves-section {
+    background: var(--dark);
+    overflow: hidden;
+  }
+
+  .loves-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 60px;
+  }
+
+  @media (max-width: 900px) {
+    .loves-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  }
+
+  .love-card {
+    padding: 48px 24px;
+    border-right: 1px solid rgba(200,134,10,0.1);
+    border-top: 4px solid transparent;
+    text-align: center;
+    transition: all 0.4s;
+    cursor: default;
+  }
+
+  .love-card:last-child { border-right: none; }
+
+  .love-card:hover {
+    background: rgba(200,134,10,0.05);
+    border-top-color: var(--amber);
+  }
+
+  .love-emoji { font-size: 36px; display: block; margin-bottom: 16px; }
+
+  .love-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--amber-light);
+    margin-bottom: 12px;
+  }
+
+  .love-card p {
+    font-size: 12px;
+    color: rgba(250,246,238,0.5);
+    line-height: 1.7;
+  }
+
+  /* ── ESG ── */
+  .esg-section {
+    background: linear-gradient(135deg, #0A1A0A 0%, #1A1208 100%);
+    text-align: center;
+  }
+
+  .esg-chain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 60px auto;
+    max-width: 900px;
+  }
+
+  .chain-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+  }
+
+  .chain-icon { font-size: 28px; margin-bottom: 8px; }
+
+  .chain-label {
+    font-size: 11px;
+    color: rgba(250,246,238,0.6);
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .chain-arrow {
+    color: var(--amber);
+    font-size: 20px;
+    opacity: 0.5;
+    padding: 0 4px;
+    align-self: center;
+  }
+
+  .esg-programs {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+  }
+
+  .esg-card {
+    background: rgba(45,74,45,0.3);
+    border: 1px solid rgba(90,138,90,0.3);
+    border-radius: 4px;
+    padding: 32px 40px;
+    text-align: left;
+    max-width: 320px;
+  }
+
+  .esg-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .esg-card p {
+    font-size: 13px;
+    color: rgba(250,246,238,0.6);
+    line-height: 1.8;
+  }
+
+  /* ── VISION CLOSE ── */
+  .vision-section {
+    background: var(--dark);
+    text-align: center;
+    padding: 120px 5vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vision-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(200,134,10,0.12), transparent);
+  }
+
+  .vision-section blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4.5vw, 52px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--white);
+    max-width: 900px;
+    margin: 0 auto 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .vision-section blockquote span { color: var(--amber-light); }
+
+  .vision-close {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-footer {
+    padding: 60px 5vw;
+    background: #080D08;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid rgba(200,134,10,0.15);
+  }
+
+  .brand-footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 80px);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .brand-footer h2 span { color: var(--amber); font-style: italic; }
+
+  .footer-sub {
+    font-size: 14px;
+    color: var(--warm-gray);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.4; transform: scaleY(0.6); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* divider */
+  .golden-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--amber);
+    margin: 0 auto 32px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="honeycomb-bg"></div>
+
+  <p class="brand-mark">Onesta · Indonesia · Est. 2024</p>
+  <h1>Honest.<br><span>Living.</span><br>Honey.</h1>
+  <p class="hero-sub">A Mission-Driven Stingless Bee Wellness Brand</p>
+  <div class="hero-tagline">
+    <span class="pill">Converse</span>
+    <span class="pill">Preserve</span>
+    <span class="pill">Conserve</span>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Explore the Universe</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CORE BELIEF
+══════════════════════════════════════ -->
+<section class="belief-section">
+  <span class="golden-rule"></span>
+  <p class="belief-quote reveal">
+    "Nature already provides <span>extraordinary solutions</span> for human health—<br>
+    if we preserve their integrity."
+  </p>
+  <p class="section-label">The Three-Word Mission</p>
+
+  <div class="three-words">
+    <div class="word-pillar reveal reveal-delay-1">
+      <div class="word-num">01</div>
+      <h3>Converse</h3>
+      <div class="word-sub">Wellness</div>
+      <p>Membuka percakapan bermakna tentang kesehatan, nutrisi, dan kembali ke alam.</p>
+    </div>
+    <div class="word-pillar reveal reveal-delay-2">
+      <div class="word-num">02</div>
+      <h3>Preserve</h3>
+      <div class="word-sub">Health</div>
+      <p>Menjaga vitalitas, ketahanan, dan kesejahteraan jangka panjang setiap individu.</p>
+    </div>
+    <div class="word-pillar reveal reveal-delay-3">
+      <div class="word-num">03</div>
+      <h3>Conserve</h3>
+      <div class="word-sub">Environment</div>
+      <p>Melindungi lebah tanpa sengat, keanekaragaman hayati, dan ekosistem kehidupan.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BRAND DNA
+══════════════════════════════════════ -->
+<section class="dna-section">
+  <p class="section-label reveal">Brand DNA</p>
+  <h2 class="section-title reveal">Lima Pilar <em>Onesta</em></h2>
+
+  <div class="dna-grid">
+    <div class="dna-card reveal reveal-delay-1">
+      <span class="dna-icon">🤝</span>
+      <h4>Trust</h4>
+      <p>Setiap botol bisa ditelusuri dari sarang ke tangan konsumen melalui Onesta Trace — traceability digital end-to-end.</p>
+      <span class="badge">Honest Honey™</span>
+    </div>
+    <div class="dna-card reveal reveal-delay-2">
+      <span class="dna-icon">🔬</span>
+      <h4>Science</h4>
+      <p>Diperkaya Trehalulose — bioactive marker unik yang mendukung respons glikemik rendah dan energi stabil.</p>
+      <span class="badge">Living Honey™</span>
+    </div>
+    <div class="dna-card reveal reveal-delay-3">
+      <span class="dna-icon">⚖️</span>
+      <h4>Wellness</h4>
+      <p>Natural Metabolic Stabilizer untuk keseimbangan energi, kesehatan gut, ketahanan imun, dan metabolic balance.</p>
+      <span class="badge">Reset Balance</span>
+    </div>
+    <div class="dna-card reveal reveal-delay-4">
+      <span class="dna-icon">🌿</span>
+      <h4>Sustainability</h4>
+      <p>Lebah stingless sebagai kekuatan nyata restorasi keanekaragaman hayati dan dampak ESG terukur.</p>
+      <span class="badge">ESG Platform</span>
+    </div>
+    <div class="dna-card reveal">
+      <span class="dna-icon">🇮🇩</span>
+      <h4>National Pride</h4>
+      <p>Mentransformasi kekayaan alam Indonesia menjadi produk wellness premium yang diakui dunia global.</p>
+      <span class="badge">Indonesia's Manuka</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     VIRTUOUS CYCLE
+══════════════════════════════════════ -->
+<section class="cycle-section">
+  <p class="section-label reveal">Ekosistem Nilai</p>
+  <h2 class="section-title reveal"><em>Virtuous Cycle</em><br>yang Saling Menghidupkan</h2>
+
+  <div class="cycle-visual reveal">
+    <div class="cycle-ring cycle-ring-1"></div>
+    <div class="cycle-ring cycle-ring-2"></div>
+    <div class="cycle-ring cycle-ring-3"></div>
+
+    <div class="cycle-center">
+      <h3>Onesta</h3>
+      <p>Balance</p>
+    </div>
+
+    <!-- Nodes at cardinal directions -->
+    <div class="cycle-node" style="top:5%; left:50%">
+      <div class="cycle-node-dot">🐝</div>
+      <span>Healthy<br>Bees</span>
+    </div>
+    <div class="cycle-node" style="top:28%; left:92%">
+      <div class="cycle-node-dot">🌳</div>
+      <span>Healthy<br>Ecosystems</span>
+    </div>
+    <div class="cycle-node" style="top:72%; left:92%">
+      <div class="cycle-node-dot">👥</div>
+      <span>Healthy<br>Communities</span>
+    </div>
+    <div class="cycle-node" style="top:92%; left:50%">
+      <div class="cycle-node-dot">❤️</div>
+      <span>Healthy<br>People</span>
+    </div>
+    <div class="cycle-node" style="top:72%; left:8%">
+      <div class="cycle-node-dot">🌏</div>
+      <span>Carbon &<br>Biodiversity</span>
+    </div>
+    <div class="cycle-node" style="top:28%; left:8%">
+      <div class="cycle-node-dot">💫</div>
+      <span>Natural<br>Wellness</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOUR LEVELS
+══════════════════════════════════════ -->
+<section class="levels-section">
+  <p class="section-label reveal">Positioning</p>
+  <h2 class="section-title reveal">Empat Level <em>Madu</em><br>di Pasar Global</h2>
+
+  <div class="levels-stack">
+    <div class="level-bar reveal reveal-delay-1">
+      <div class="level-num">1</div>
+      <div class="level-info">
+        <h4>Adulterated Honey</h4>
+        <p>Dicampur sirup atau zat aditif tak tercantum. Bukan madu sejati.</p>
+      </div>
+    </div>
+    <div class="level-bar reveal reveal-delay-2">
+      <div class="level-num">2</div>
+      <div class="level-info">
+        <h4>Inferior Honey</h4>
+        <p>Madu asli tapi mutu rendah — mentah, terlalu dipanaskan, atau dipanen terlalu dini.</p>
+      </div>
+    </div>
+    <div class="level-bar reveal reveal-delay-3">
+      <div class="level-num">3</div>
+      <div class="level-info">
+        <h4>Superfood Honey</h4>
+        <p>Madu matang premium dari lebah umum. Berkualitas baik, tapi masih konvensional.</p>
+      </div>
+    </div>
+    <div class="level-bar reveal reveal-delay-4">
+      <div class="level-num">4</div>
+      <div class="level-info">
+        <h4>Stingless Bee Wellness Honey</h4>
+        <p>Kategori baru yang Onesta pelopori. Bukan sekadar madu — sistem pangan fungsional hidup.</p>
+      </div>
+      <div class="level-crown">👑</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TWO PILLARS
+══════════════════════════════════════ -->
+<div class="pillars-section">
+  <div class="pillar-block reveal">
+    <div class="pillar-number">1</div>
+    <div class="pillar-tag">Pilar Pertama</div>
+    <div class="pillar-name">Honest Honey™</div>
+    <div class="pillar-subtitle">Trust · Integrity · Traceability</div>
+    <ul class="pillar-list">
+      <li>Matang sempurna (Ripe)</li>
+      <li>Tidak diproses berlebihan (Raw)</li>
+      <li>100% madu murni tanpa aditif</li>
+      <li>Digital traceability hive-to-bottle</li>
+      <li>Say No to Honey Laundering™</li>
+    </ul>
+  </div>
+  <div class="pillar-block reveal reveal-delay-1">
+    <div class="pillar-number">2</div>
+    <div class="pillar-tag">Pilar Kedua</div>
+    <div class="pillar-name">Living Honey™</div>
+    <div class="pillar-subtitle">Function · Science · Bioactives</div>
+    <ul class="pillar-list">
+      <li>Kaya Trehalulose alami</li>
+      <li>Glikemik rendah, energi stabil</li>
+      <li>Antioksidan · Prebiotik · Propolis</li>
+      <li>Anti-inflamasi · Antimikroba</li>
+      <li>Natural Metabolic Stabilizer</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     FIVE LOVES
+══════════════════════════════════════ -->
+<section class="loves-section">
+  <p class="section-label reveal">The 5 L's</p>
+  <h2 class="section-title reveal"><em>Lima Cinta</em> Onesta</h2>
+
+  <div class="loves-grid">
+    <div class="love-card reveal reveal-delay-1">
+      <span class="love-emoji">🍯</span>
+      <h4>Love Premium Quality</h4>
+      <p>Madu lebah stingless wellness terbaik dengan integritas tak tergoyahkan.</p>
+    </div>
+    <div class="love-card reveal reveal-delay-2">
+      <span class="love-emoji">🐝</span>
+      <h4>Love the Bees</h4>
+      <p>Melindungi Heterotrigona itama dan spesies stingless bee Indonesia.</p>
+    </div>
+    <div class="love-card reveal reveal-delay-3">
+      <span class="love-emoji">👨‍👩‍👧</span>
+      <h4>Love the Communities</h4>
+      <p>Membuka peluang ekonomi bermakna bagi peternak dan komunitas lokal.</p>
+    </div>
+    <div class="love-card reveal reveal-delay-4">
+      <span class="love-emoji">🌍</span>
+      <h4>Love the Environment</h4>
+      <p>Lebah sebagai instrumen restorasi biodiversitas dan dampak ESG nyata.</p>
+    </div>
+    <div class="love-card reveal">
+      <span class="love-emoji">🇮🇩</span>
+      <h4>Love Indonesia</h4>
+      <p>Kekayaan alam nusantara → brand wellness global yang membanggakan.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ESG
+══════════════════════════════════════ -->
+<section class="esg-section">
+  <p class="section-label reveal">ESG Platform</p>
+  <h2 class="section-title reveal">Rantai Dampak <em>Nyata</em></h2>
+
+  <div class="esg-chain reveal">
+    <div class="chain-node"><div class="chain-icon">🐝</div><span class="chain-label">Bees</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">🌺</div><span class="chain-label">Plants</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">🌸</div><span class="chain-label">Pollination</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">🌲</div><span class="chain-label">Forests</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">💨</div><span class="chain-label">Carbon</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">🦋</div><span class="chain-label">Biodiversity</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">🏘️</div><span class="chain-label">Communities</span></div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-node"><div class="chain-icon">💚</div><span class="chain-label">Wellness</span></div>
+  </div>
+
+  <div class="esg-programs">
+    <div class="esg-card reveal reveal-delay-1">
+      <h4>🏡 Adopt a Hive</h4>
+      <p>Perusahaan korporasi dapat mengadopsi sarang lebah sebagai wujud ESG yang nyata, terukur, dan bermakna.</p>
+    </div>
+    <div class="esg-card reveal reveal-delay-2">
+      <h4>🌳 Honey is the New Tree</h4>
+      <p>Madu lebah sebagai instrumen konservasi hutan dan karbon — mengubah ESG menjadi sesuatu yang bisa diberikan.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     VISION CLOSE
+══════════════════════════════════════ -->
+<section class="vision-section">
+  <div class="vision-bg"></div>
+  <blockquote class="reveal">
+    "Menjadi brand wellness lebah stingless <span>paling dipercaya</span>
+    dan perusahaan wellness berbasis alam <span>terkemuka dari Indonesia</span>."
+  </blockquote>
+  <p class="vision-close reveal">
+    Indonesia's answer to Manuka — and potentially <em>much more.</em>
+  </p>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<div class="brand-footer">
+  <h2>One<span>sta</span></h2>
+  <p class="footer-sub">Honest Honey · Living Honey · A Brand With a Mission</p>
+  <p class="footer-sub" style="font-size:12px; margin-top:8px; opacity:0.5;">
+    Converse · Preserve · Conserve &nbsp;|&nbsp; Indonesia
+  </p>
+</div>
+
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
