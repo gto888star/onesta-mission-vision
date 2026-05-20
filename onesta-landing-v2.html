@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onesta — Honest Honey. Living Honey. Indonesia's Manuka.</title>
+<meta name="description" content="Stingless bee wellness honey dari Indonesia. Kaya Trehalulose, digitally traceable, backed by science. Indonesia's answer to Manuka.">
+<!-- Open Graph for sharing -->
+<meta property="og:title" content="Onesta — Honest Honey. Living Honey.">
+<meta property="og:description" content="Cek Balance Score tubuhmu. Diagnostik metabolik gratis dari Onesta.">
+<meta property="og:image" content="https://onesta.co.id/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   ONESTA DESIGN SYSTEM v2
+   Shopify-ready section architecture
+   ═══════════════════════════════════════ */
+:root {
+  /* Brand Colors */
+  --honey:       #C8842A;
+  --honey-lt:    #E8A84A;
+  --amber:       #F2C46D;
+  --amber-pale:  #FAE9C0;
+  --forest:      #1A2215;
+  --bark:        #2E1F0E;
+  --espresso:    #3A2910;
+  --cream:       #FAF6EE;
+  --warm-white:  #FEFCF7;
+  --sand:        #EDE3D0;
+  --dark-sand:   #D6C9B5;
+  --muted:       #9C8870;
+  --light-muted: #C5B49E;
+  --leaf:        #3D5030;
+  /* Spacing */
+  --section-pad: 88px 60px;
+  --radius:      0px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--cream);
+  color: var(--bark);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width:3px; }
+::-webkit-scrollbar-track { background:var(--sand); }
+::-webkit-scrollbar-thumb { background:var(--honey); }
+
+/* ── LANGUAGE TOGGLE BAR ── */
+/* [shopify-section: language-bar] */
+.lang-bar {
+  background: var(--forest);
+  padding: 8px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lang-bar-left {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(250,246,238,.4);
+}
+.lang-bar-left span { color: var(--amber); }
+.lang-switcher {
+  display: flex;
+  gap: 0;
+}
+.lang-btn {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(250,246,238,.35);
+  background: none;
+  border: 1px solid rgba(200,132,42,.15);
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all .25s;
+  margin-left: -1px;
+}
+.lang-btn.active { background: var(--honey); color: var(--cream); border-color: var(--honey); }
+.lang-btn:hover:not(.active) { color: var(--amber); border-color: rgba(200,132,42,.35); }
+
+/* ── NAV ── */
+/* [shopify-section: header] */
+.nav {
+  position: sticky; top: 0; width: 100%; z-index: 200;
+  padding: 0 60px; height: 66px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,246,238,.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200,132,42,.1);
+  transition: box-shadow .3s;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 5px;
+  color: var(--bark); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--honey); }
+.nav-center { display: flex; gap: 28px; list-style: none; }
+.nav-center a {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color .25s;
+}
+.nav-center a:hover { color: var(--bark); }
+.nav-right { display: flex; gap: 8px; align-items: center; }
+.nav-btn {
+  background: var(--bark); color: var(--cream);
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 9px 20px; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .25s; text-decoration: none;
+}
+.nav-btn:hover { background: var(--honey); }
+.nav-btn-ghost {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); background: none; border: 1px solid var(--sand);
+  padding: 8px 16px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: all .25s;
+}
+.nav-btn-ghost:hover { border-color: var(--honey); color: var(--honey); }
+
+/* ── HERO ── */
+/* [shopify-section: hero-split] */
+.hero {
+  min-height: calc(100vh - 82px);
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 72px 52px 72px 60px;
+  position: relative; z-index: 2;
+}
+.eyebrow {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--honey); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content:''; width: 32px; height: 1px; background: var(--honey); }
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 4.6vw, 72px);
+  line-height: 1.02; font-weight: 300;
+  color: var(--bark); margin-bottom: 10px;
+}
+.hero-h1 em { font-style: italic; color: var(--honey); }
+.hero-sub-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-style: italic; color: var(--light-muted);
+  margin-bottom: 24px;
+}
+.hero-body {
+  font-size: 14px; line-height: 1.85;
+  color: var(--muted); max-width: 410px; margin-bottom: 36px;
+}
+.hero-body strong { color: var(--bark); font-weight: 500; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+/* Buttons */
+.btn-primary {
+  background: var(--bark); color: var(--cream);
+  padding: 14px 32px; font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; border: none; cursor: pointer;
+  text-decoration: none; font-family: 'DM Sans', sans-serif;
+  transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--honey); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,132,42,.28); }
+.btn-quiz {
+  background: var(--honey); color: var(--cream);
+  padding: 14px 32px; font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; border: none; cursor: pointer;
+  text-decoration: none; font-family: 'DM Sans', sans-serif;
+  transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-quiz:hover { background: var(--bark); transform: translateY(-2px); }
+.btn-ghost {
+  color: var(--bark); font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all .25s; padding: 14px 0;
+  background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+}
+.btn-ghost:hover { gap: 14px; color: var(--honey); }
+.btn-ghost::after { content: '→'; }
+
+.hero-trust { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+.trust-pill {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  border: 1px solid var(--sand); color: var(--muted);
+  padding: 5px 12px; display: flex; align-items: center; gap: 5px;
+  transition: all .25s;
+}
+.trust-pill:hover { border-color: var(--honey); color: var(--honey); }
+
+/* Hero Right */
+.hero-right { background: var(--forest); position: relative; overflow: hidden; }
+.hero-right-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 65% 25%, rgba(200,132,42,.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 25% 75%, rgba(61,80,48,.25) 0%, transparent 50%);
+}
+.hero-svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .06; }
+.hero-stat-badge {
+  position: absolute; top: 40px; right: 40px;
+  background: rgba(250,246,238,.06);
+  border: 1px solid rgba(232,168,74,.2);
+  backdrop-filter: blur(10px);
+  padding: 16px 20px; text-align: center;
+}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px; line-height: 1; color: var(--amber);
+}
+.stat-label {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(250,246,238,.38); margin-top: 3px; line-height: 1.5;
+}
+
+/* Viral Badge — shareable positioning */
+.manuka-badge {
+  position: absolute; top: 40px; left: 40px;
+  background: linear-gradient(135deg, rgba(200,132,42,.18), rgba(200,132,42,.06));
+  border: 1px solid rgba(200,132,42,.35);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+}
+.manuka-badge-label {
+  font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(250,246,238,.45); margin-bottom: 2px;
+}
+.manuka-badge-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; font-style: italic; color: var(--amber);
+}
+
+.hero-right-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 40px;
+  background: linear-gradient(transparent, rgba(26,22,15,.92) 40%);
+}
+.hero-product-label {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(232,168,74,.55); margin-bottom: 12px;
+}
+.hero-product-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px; font-weight: 300; line-height: 1.1;
+  color: var(--cream); margin-bottom: 7px;
+}
+.hero-product-name em { font-style: italic; color: var(--amber); }
+.hero-product-desc {
+  font-size: 12px; line-height: 1.7;
+  color: rgba(250,246,238,.42); max-width: 270px; margin-bottom: 18px;
+}
+.hero-product-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; color: var(--amber);
+}
+.hero-product-price span { font-size: 12px; color: rgba(250,246,238,.3); margin-left: 5px; }
+.hero-add-btn {
+  margin-top: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--honey); color: var(--cream);
+  padding: 12px 24px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: all .25s;
+}
+.hero-add-btn:hover { background: var(--amber-pale); color: var(--bark); }
+
+/* Entry animations */
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+.hero-left > * { animation: fadeUp .65s ease both; }
+.hero-left > *:nth-child(1) { animation-delay: .08s; }
+.hero-left > *:nth-child(2) { animation-delay: .16s; }
+.hero-left > *:nth-child(3) { animation-delay: .24s; }
+.hero-left > *:nth-child(4) { animation-delay: .32s; }
+.hero-left > *:nth-child(5) { animation-delay: .42s; }
+.hero-left > *:nth-child(6) { animation-delay: .52s; }
+
+/* ── TICKER ── */
+/* [shopify-section: trust-ticker] */
+.ticker { background: var(--bark); padding: 12px 0; overflow: hidden; }
+.ticker-track { display: flex; white-space: nowrap; animation: ticker 34s linear infinite; }
+.ticker-item {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(232,168,74,.6); padding: 0 26px; flex-shrink: 0;
+}
+.ticker-dot { color: var(--honey); padding: 0 4px; }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+/* ── VIRAL HOOK BANNER ── */
+/* [shopify-section: viral-hook] */
+.viral-hook {
+  background: linear-gradient(135deg, var(--espresso) 0%, var(--bark) 50%, #1A1008 100%);
+  padding: 52px 60px;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 48px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.viral-hook::before {
+  content: 'MANUKA';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 180px; line-height: 1;
+  color: rgba(255,255,255,.02);
+  right: -20px; top: -20px;
+  pointer-events: none; letter-spacing: 4px;
+}
+.viral-hook-label {
+  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.viral-hook-label::before { content: ''; width: 24px; height: 1px; background: var(--amber); }
+.viral-hook-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 300; line-height: 1.1; color: var(--cream);
+  margin-bottom: 8px;
+}
+.viral-hook-headline em { font-style: italic; color: var(--amber); }
+.viral-hook-sub {
+  font-size: 13px; line-height: 1.8;
+  color: rgba(250,246,238,.45); max-width: 520px;
+}
+.viral-hook-stats {
+  display: flex; gap: 32px; flex-shrink: 0;
+}
+.vhstat { text-align: center; }
+.vhstat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px; line-height: 1; color: var(--amber);
+}
+.vhstat-label {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(250,246,238,.35); margin-top: 4px; line-height: 1.5;
+}
+
+/* ── QUIZ SECTION ── */
+/* [shopify-section: balance-quiz] */
+.quiz-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--warm-white); }
+.quiz-left {
+  padding: 84px 52px 84px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.quiz-domains { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 28px; }
+.quiz-domain {
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 12px; border: 1px solid var(--sand);
+  font-size: 11px; color: var(--muted); transition: all .25s;
+}
+.quiz-domain:hover { border-color: var(--honey); color: var(--bark); }
+.quiz-domain-icon { font-size: 14px; }
+.quiz-meta { font-size: 11px; color: var(--light-muted); margin-bottom: 18px; }
+
+/* QUIZ CARD — viral result preview */
+.quiz-right {
+  background: var(--bark);
+  padding: 64px 52px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.quiz-right::before {
+  content: 'BALANCE';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 130px; line-height: 1;
+  color: rgba(255,255,255,.022);
+  bottom: -10px; right: -8px;
+  pointer-events: none; letter-spacing: 4px;
+}
+.quiz-card-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 8px;
+}
+.quiz-step-indicator { display: flex; gap: 5px; margin-bottom: 26px; }
+.quiz-dot { width: 24px; height: 3px; background: rgba(255,255,255,.1); transition: background .3s; }
+.quiz-dot.active { background: var(--honey); }
+.quiz-dot.done { background: rgba(200,132,42,.38); }
+.quiz-q {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 300; line-height: 1.45;
+  color: var(--cream); margin-bottom: 24px;
+}
+.quiz-q em { font-style: italic; color: var(--amber); }
+.quiz-opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.quiz-opt {
+  padding: 12px 16px;
+  border: 1px solid rgba(200,132,42,.18);
+  color: rgba(250,246,238,.55);
+  font-size: 12px; cursor: pointer; transition: all .22s;
+  background: none; text-align: left; font-family: 'DM Sans', sans-serif;
+}
+.quiz-opt:hover, .quiz-opt.selected {
+  border-color: var(--honey);
+  background: rgba(200,132,42,.1);
+  color: var(--cream); transform: translateX(5px);
+}
+.quiz-footer { display: flex; align-items: center; justify-content: space-between; }
+.quiz-next {
+  background: var(--honey); color: var(--cream);
+  border: none; padding: 12px 24px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; gap: 7px; transition: all .25s;
+}
+.quiz-next:hover { background: var(--honey-lt); }
+.quiz-progress-text { font-size: 10px; letter-spacing: 1px; color: rgba(250,246,238,.3); }
+
+/* ── VIRAL RESULT CARD PREVIEW ── */
+/* This appears after quiz completion — shareable */
+.result-preview {
+  background: var(--bark);
+  padding: 64px 52px;
+  display: none; /* shown via JS after quiz */
+  flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.result-preview.show { display: flex; }
+
+/* ── QUIZ SHARE CARD ── */
+/* [shopify-section: share-result] — standalone viral page */
+.share-card-demo {
+  margin: 40px 60px;
+  background: linear-gradient(135deg, var(--bark) 0%, var(--espresso) 60%, var(--forest) 100%);
+  padding: 48px;
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 32px; align-items: center;
+}
+.share-card-demo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(200,132,42,.15) 0%, transparent 55%);
+}
+.share-card-content { position: relative; z-index: 1; }
+.share-card-eyebrow {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 12px;
+}
+.share-card-score-label {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(250,246,238,.5); margin-bottom: 6px;
+}
+.share-card-score {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px; line-height: 1; color: var(--amber);
+  margin-bottom: 4px;
+}
+.share-card-score span { font-size: 32px; color: rgba(232,168,74,.5); }
+.share-card-profile {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--cream);
+  margin-bottom: 8px;
+}
+.share-card-profile em { font-style: italic; color: var(--amber); }
+.share-card-desc {
+  font-size: 12px; line-height: 1.7;
+  color: rgba(250,246,238,.45); max-width: 360px;
+}
+.share-card-right {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+}
+.share-card-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 4px; color: var(--amber);
+  opacity: .7;
+}
+.share-card-domains { display: flex; flex-direction: column; gap: 8px; }
+.share-domain-bar {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10px; color: rgba(250,246,238,.5);
+  min-width: 180px;
+}
+.share-domain-name { width: 100px; text-align: right; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; }
+.share-domain-track {
+  flex: 1; height: 3px; background: rgba(255,255,255,.1); position: relative;
+}
+.share-domain-fill { height: 100%; background: var(--honey); }
+.share-domain-fill.low { background: rgba(200,132,42,.4); }
+.share-card-cta-row {
+  display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; align-items: center;
+}
+.share-btn {
+  background: var(--honey); color: var(--cream);
+  border: none; padding: 11px 20px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; gap: 7px; transition: all .25s;
+}
+.share-btn:hover { background: var(--bark); }
+.share-btn-outline {
+  background: none; color: rgba(250,246,238,.5);
+  border: 1px solid rgba(200,132,42,.25); padding: 10px 18px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .25s;
+}
+.share-btn-outline:hover { border-color: var(--honey); color: var(--amber); }
+.share-card-note {
+  font-size: 10px; color: rgba(250,246,238,.3); margin-top: 10px;
+  letter-spacing: .5px;
+}
+
+/* ── PRODUCTS ── */
+/* [shopify-section: product-collection] */
+.products-section { padding: var(--section-pad); background: var(--cream); }
+.section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; }
+.section-label {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--honey); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::before { content:''; width:24px; height:1px; background: var(--honey); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 2.8vw, 44px);
+  font-weight: 300; line-height: 1.1; margin-bottom: 12px;
+}
+.section-title em { font-style: italic; color: var(--honey); }
+.section-title-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-style: italic; color: var(--light-muted); margin-bottom: 16px;
+}
+.view-all {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 7px; transition: all .25s;
+}
+.view-all:hover { color: var(--honey); gap: 12px; }
+.view-all::after { content: '→'; }
+
+.product-tabs { display: flex; margin-bottom: 32px; border-bottom: 1px solid var(--sand); }
+.ptab {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 10px 20px; cursor: pointer;
+  color: var(--light-muted); border: none; background: none;
+  font-family: 'DM Sans', sans-serif;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .25s;
+}
+.ptab.active { color: var(--bark); border-bottom-color: var(--honey); }
+.ptab:hover { color: var(--bark); }
+
+.products-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.product-card { cursor: pointer; transition: transform .3s; }
+.product-card:hover { transform: translateY(-5px); }
+.product-img { aspect-ratio: 3/4; position: relative; overflow: hidden; margin-bottom: 14px; }
+.product-img-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.product-hex { font-size: 64px; filter: drop-shadow(0 4px 16px rgba(0,0,0,.2)); }
+.product-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--honey); color: var(--cream);
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 9px;
+}
+.product-badge.new { background: var(--leaf); }
+.product-badge.rare { background: var(--espresso); }
+.product-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(26,22,15,.75));
+  padding: 16px 12px 12px; opacity: 0; transition: opacity .3s;
+}
+.product-card:hover .product-overlay { opacity: 1; }
+.product-overlay-btn {
+  width: 100%; background: var(--honey); color: var(--cream);
+  border: none; padding: 9px; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; cursor: pointer; font-family: 'DM Sans', sans-serif;
+}
+.product-cat { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.product-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; line-height: 1.2; margin-bottom: 4px; }
+.product-tagline { font-size: 11px; line-height: 1.6; color: var(--muted); margin-bottom: 11px; }
+.product-bottom { display: flex; align-items: center; justify-content: space-between; }
+.product-price { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--bark); }
+.add-cart {
+  width: 32px; height: 32px; background: var(--bark); color: var(--cream);
+  border: none; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center; transition: all .25s;
+}
+.add-cart:hover { background: var(--honey); transform: rotate(90deg); }
+.pc-daily { background: linear-gradient(145deg,#2E1F0E,#5A3D1E); }
+.pc-botanical { background: linear-gradient(145deg,#1A2215,#3D5030); }
+.pc-targeted { background: linear-gradient(145deg,#1E2A35,#2D4A5E); }
+.pc-forest { background: linear-gradient(145deg,#0E1508,#1A2215); }
+
+/* ── SCIENCE ── */
+/* [shopify-section: science-callout] */
+.science-section { background: var(--bark); padding: var(--section-pad); position: relative; overflow: hidden; }
+.science-bg-text {
+  position: absolute; font-family: 'Bebas Neue', sans-serif;
+  font-size: 190px; line-height: 1; color: rgba(255,255,255,.02);
+  right: -20px; top: 40px; pointer-events: none; letter-spacing: 4px;
+}
+.science-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 68px; align-items: start; }
+.sci-label { color: var(--amber); }
+.sci-label::before { background: var(--amber); }
+.sci-title { color: var(--cream); }
+.sci-title-en { color: rgba(250,246,238,.3); }
+.science-body { font-size: 13px; line-height: 1.9; color: rgba(250,246,238,.46); margin-bottom: 28px; max-width: 380px; }
+.science-body strong { color: rgba(250,246,238,.8); font-weight: 500; }
+.honey-levels { display: flex; flex-direction: column; gap: 2px; }
+.honey-level {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 15px; border-left: 3px solid rgba(255,255,255,.04); transition: all .25s;
+}
+.honey-level:hover { border-left-color: var(--honey); background: rgba(200,132,42,.04); }
+.honey-level.highlight { border-left-color: var(--honey); background: rgba(200,132,42,.09); }
+.level-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; color: rgba(232,168,74,.22); min-width: 32px; }
+.honey-level.highlight .level-num { color: var(--amber); }
+.level-title { font-size: 12px; font-weight: 500; color: rgba(250,246,238,.36); margin-bottom: 2px; }
+.honey-level.highlight .level-title { color: var(--cream); }
+.level-desc { font-size: 11px; color: rgba(250,246,238,.26); }
+.honey-level.highlight .level-desc { color: rgba(250,246,238,.5); }
+.science-right { display: flex; flex-direction: column; gap: 12px; }
+.bioactive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.bioactive-card { padding: 17px 15px; border: 1px solid rgba(200,132,42,.12); transition: all .25s; }
+.bioactive-card:hover { border-color: rgba(200,132,42,.36); background: rgba(200,132,42,.04); }
+.bio-icon { font-size: 19px; margin-bottom: 8px; }
+.bio-name { font-size: 11px; font-weight: 500; color: var(--amber); margin-bottom: 3px; }
+.bio-desc { font-size: 11px; color: rgba(250,246,238,.36); line-height: 1.6; }
+.trehalulose-feature {
+  background: linear-gradient(135deg, rgba(200,132,42,.11), rgba(200,132,42,.03));
+  border: 1px solid rgba(200,132,42,.22); padding: 24px 20px; margin-bottom: 12px;
+}
+.treha-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 9px; }
+.treha-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+.treha-name em { font-style: italic; color: var(--amber); }
+.treha-desc { font-size: 12px; color: rgba(250,246,238,.46); line-height: 1.7; }
+.treha-pills { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 11px; }
+.treha-pill { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid rgba(200,132,42,.26); color: var(--amber); padding: 3px 9px; }
+.trace-bar {
+  display: flex; align-items: center; gap: 13px;
+  padding: 15px 17px; border: 1px solid rgba(200,132,42,.17);
+  background: rgba(200,132,42,.04); margin-top: 6px;
+}
+.trace-icon { font-size: 18px; }
+.trace-title { font-size: 12px; font-weight: 500; color: var(--cream); margin-bottom: 2px; }
+.trace-desc { font-size: 11px; color: rgba(250,246,238,.36); }
+.trace-cta {
+  margin-left: auto; font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber); border: 1px solid rgba(200,132,42,.28);
+  padding: 7px 13px; white-space: nowrap; cursor: pointer;
+  background: none; font-family: 'DM Sans', sans-serif; transition: all .25s;
+}
+.trace-cta:hover { background: var(--honey); color: var(--cream); border-color: var(--honey); }
+
+/* Blockchain V2 teaser */
+.blockchain-teaser {
+  margin-top: 14px;
+  border: 1px solid rgba(200,132,42,.2);
+  background: rgba(200,132,42,.05);
+  padding: 18px 20px;
+  display: flex; align-items: center; gap: 16px;
+}
+.blockchain-icon { font-size: 24px; }
+.blockchain-text {}
+.blockchain-title { font-size: 12px; font-weight: 500; color: var(--cream); margin-bottom: 3px; }
+.blockchain-desc { font-size: 11px; color: rgba(250,246,238,.38); line-height: 1.5; }
+.blockchain-badge {
+  margin-left: auto; flex-shrink: 0;
+  background: rgba(200,132,42,.12); border: 1px solid rgba(200,132,42,.3);
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber); padding: 5px 10px;
+}
+
+/* ── PROTOCOLS ── */
+/* [shopify-section: protocol-grid] */
+.protocols-section { padding: var(--section-pad); background: var(--warm-white); }
+.protocols-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; }
+.protocols-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; }
+.protocol-card { position: relative; overflow: hidden; cursor: pointer; transition: transform .3s; }
+.protocol-card:hover { transform: translateY(-4px); }
+.protocol-featured {
+  background: var(--forest); padding: 44px 40px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 440px; position: relative;
+}
+.protocol-featured::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(200,132,42,.18) 0%, transparent 55%),
+    linear-gradient(to bottom, transparent 40%, rgba(26,22,15,.88) 100%);
+}
+.protocol-partner-badge {
+  position: absolute; top: 24px; right: 24px;
+  background: rgba(200,132,42,.13); border: 1px solid rgba(200,132,42,.28);
+  backdrop-filter: blur(8px); padding: 6px 12px;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber);
+}
+.protocol-content { position: relative; z-index: 1; }
+.protocol-tag {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 11px;
+  display: flex; align-items: center; gap: 7px;
+}
+.protocol-tag::before { content:''; width: 16px; height: 1px; background: var(--honey); }
+.protocol-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 6px; }
+.protocol-name em { font-style: italic; color: var(--amber); }
+.protocol-by { font-size: 11px; color: rgba(250,246,238,.46); margin-bottom: 14px; }
+.protocol-desc { font-size: 12px; line-height: 1.7; color: rgba(250,246,238,.46); margin-bottom: 20px; }
+.protocol-cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber); background: none;
+  border: none; border-bottom: 1px solid rgba(200,132,42,.3);
+  padding-bottom: 3px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: gap .25s;
+}
+.protocol-cta:hover { gap: 12px; }
+.protocol-cta::after { content: '→'; }
+.protocol-secondary {
+  background: var(--sand); padding: 32px 28px;
+  display: flex; flex-direction: column; min-height: 440px;
+}
+.protocol-secondary-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+.protocol-secondary-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; line-height: 1.2; color: var(--bark); margin-bottom: 5px; }
+.protocol-secondary-by { font-size: 11px; color: var(--muted); margin-bottom: 11px; }
+.protocol-secondary-desc { font-size: 12px; line-height: 1.7; color: var(--muted); flex: 1; }
+.protocol-secondary-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--dark-sand); display: flex; align-items: center; justify-content: space-between; }
+.protocol-secondary-skus { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.protocol-join {
+  background: var(--honey); padding: 32px 28px;
+  display: flex; flex-direction: column; min-height: 440px;
+}
+.protocol-join-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 10px; }
+.protocol-join-title em { font-style: italic; }
+.protocol-join-desc { font-size: 12px; line-height: 1.7; color: rgba(250,246,238,.72); margin-bottom: 16px; flex: 1; }
+.protocol-join-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.protocol-join-list li { font-size: 11px; color: rgba(250,246,238,.8); display: flex; align-items: center; gap: 7px; }
+.protocol-join-list li::before { content: '✓'; font-size: 10px; }
+.protocol-join-btn { background: var(--cream); color: var(--honey); border: none; padding: 12px 20px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .25s; margin-top: auto; }
+.protocol-join-btn:hover { background: var(--bark); color: var(--cream); }
+
+/* ── TESTIMONIALS ── */
+/* [shopify-section: social-proof] */
+.testi-section { padding: var(--section-pad); background: var(--cream); }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--sand); margin-top: 44px; }
+.testi-card { background: var(--cream); padding: 36px 32px; transition: background .25s; }
+.testi-card:hover { background: var(--warm-white); }
+.testi-stars { color: var(--honey); font-size: 11px; letter-spacing: 3px; margin-bottom: 14px; }
+.testi-quote { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 300; line-height: 1.55; color: var(--bark); margin-bottom: 18px; }
+.testi-author { display: flex; align-items: center; gap: 11px; }
+.testi-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--honey); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--cream); font-weight: 500; flex-shrink: 0; }
+.testi-name { font-size: 12px; font-weight: 500; color: var(--bark); }
+.testi-role { font-size: 10px; color: var(--muted); margin-top: 1px; }
+.testi-product { display: inline-block; margin-top: 11px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--honey); border: 1px solid rgba(200,132,42,.22); padding: 3px 9px; }
+
+/* ── GIFT & B2B ── */
+/* [shopify-section: gift-b2b] */
+.gift-section {
+  background: var(--forest); padding: var(--section-pad);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 68px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.gift-section::after { content:''; position:absolute; right:-100px; top:-100px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(200,132,42,.07),transparent 70%); }
+.gift-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--amber); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.gift-label::before { content:''; width:24px; height:1px; background:var(--amber); }
+.gift-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,2.8vw,44px); font-weight:300; line-height:1.1; color:var(--cream); margin-bottom:10px; }
+.gift-title em { font-style:italic; color:var(--amber); }
+.gift-title-en { font-family:'Cormorant Garamond',serif; font-size:clamp(12px,1.1vw,14px); font-style:italic; color:rgba(250,246,238,.28); margin-bottom:16px; }
+.gift-desc { font-size:13px; line-height:1.9; color:rgba(250,246,238,.46); margin-bottom:26px; max-width:350px; }
+.gift-types { display:flex; flex-direction:column; gap:8px; margin-bottom:28px; }
+.gift-type { display:flex; align-items:center; gap:12px; padding:12px 15px; border:1px solid rgba(200,132,42,.12); transition:all .25s; cursor:pointer; }
+.gift-type:hover { border-color:rgba(200,132,42,.36); background:rgba(200,132,42,.05); }
+.gift-type-icon { font-size:16px; }
+.gift-type-name { font-size:12px; font-weight:500; color:var(--cream); }
+.gift-type-desc { font-size:11px; color:rgba(250,246,238,.36); }
+.gift-right { display:flex; flex-direction:column; gap:13px; position:relative; z-index:1; }
+.gift-box { background:rgba(250,246,238,.04); border:1px solid rgba(200,132,42,.12); padding:28px 24px; }
+.gift-box-title { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:300; color:var(--cream); margin-bottom:8px; }
+.gift-box-title em { font-style:italic; color:var(--amber); }
+.gift-box-desc { font-size:12px; color:rgba(250,246,238,.4); line-height:1.6; margin-bottom:13px; }
+.gift-box-price { font-family:'Cormorant Garamond',serif; font-size:24px; color:var(--amber); margin-bottom:12px; }
+.gift-box-cta { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--amber); border:1px solid rgba(200,132,42,.26); padding:8px 16px; background:none; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all .25s; }
+.gift-box-cta:hover { background:var(--honey); color:var(--cream); border-color:var(--honey); }
+
+/* ── AFFILIATE ── */
+/* [shopify-section: affiliate-cta] */
+.affiliate-section { background: var(--sand); padding: var(--section-pad); }
+.affiliate-inner { display:flex; align-items:center; justify-content:space-between; gap:44px; }
+.affiliate-left { max-width:440px; }
+.aff-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--honey); margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+.aff-label::before { content:''; width:24px; height:1px; background:var(--honey); }
+.affiliate-title { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,2.4vw,36px); font-weight:300; line-height:1.15; margin-bottom:10px; }
+.affiliate-title em { font-style:italic; color:var(--honey); }
+.affiliate-desc { font-size:13px; line-height:1.8; color:var(--muted); }
+.affiliate-cta-wrap { margin-top:24px; display:flex; gap:12px; align-items:center; }
+.affiliate-right { display:flex; gap:12px; flex-shrink:0; }
+.affiliate-stat { text-align:center; padding:24px 28px; background:var(--warm-white); border:1px solid var(--dark-sand); }
+.aff-num { font-family:'Bebas Neue',sans-serif; font-size:44px; line-height:1; color:var(--honey); margin-bottom:5px; }
+.aff-label2 { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+
+/* ── GLOBAL MARKET ── */
+/* [shopify-section: global-expansion] */
+.global-section {
+  background: var(--bark); padding: 56px 60px;
+  display: flex; align-items: center; gap: 52px;
+  position: relative; overflow: hidden;
+}
+.global-section::before {
+  content: 'GLOBAL';
+  position: absolute; font-family: 'Bebas Neue', sans-serif;
+  font-size: 160px; color: rgba(255,255,255,.018);
+  right: -10px; top: 50%; transform: translateY(-50%);
+  pointer-events: none; letter-spacing: 6px;
+}
+.global-left { flex: 1; }
+.global-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--amber); margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+.global-label::before { content:''; width:24px; height:1px; background:var(--amber); }
+.global-title { font-family:'Cormorant Garamond',serif; font-size:clamp(26px,2.6vw,38px); font-weight:300; color:var(--cream); line-height:1.1; margin-bottom:8px; }
+.global-title em { font-style:italic; color:var(--amber); }
+.global-desc { font-size:13px; color:rgba(250,246,238,.44); line-height:1.8; max-width:400px; }
+.global-markets { display:flex; gap:0; flex-shrink:0; }
+.market-item { text-align:center; padding:20px 28px; border:1px solid rgba(200,132,42,.12); margin-left:-1px; transition:all .25s; cursor:pointer; }
+.market-item:hover { background:rgba(200,132,42,.08); border-color:rgba(200,132,42,.3); }
+.market-flag { font-size:28px; margin-bottom:8px; }
+.market-name { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,.38); margin-bottom:2px; }
+.market-status { font-size:8px; letter-spacing:1px; text-transform:uppercase; color:var(--amber); }
+.market-status.soon { color:rgba(250,246,238,.25); }
+
+/* ── CHANNELS ── */
+/* [shopify-section: channel-bar] */
+.channels-section { background: var(--espresso); padding: 44px 60px; }
+.channels-inner { display:flex; align-items:center; gap:40px; justify-content:space-between; flex-wrap:wrap; }
+.channels-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(250,246,238,.28); white-space:nowrap; }
+.channels-list { display:flex; gap:9px; align-items:center; flex-wrap:wrap; }
+.channel-item { display:flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.5px; color:rgba(250,246,238,.38); border:1px solid rgba(255,255,255,.06); padding:9px 15px; text-decoration:none; transition:all .25s; cursor:pointer; }
+.channel-item:hover { color:var(--cream); border-color:rgba(200,132,42,.3); }
+.channel-icon { font-size:13px; }
+
+/* ── FOOTER ── */
+/* [shopify-section: footer] */
+footer { background: #0E0A04; padding: 56px 60px 24px; }
+.footer-top { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:32px; margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid rgba(200,132,42,.06); }
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:5px; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:7px; }
+.footer-tagline { font-size:12px; line-height:1.8; color:rgba(250,246,238,.26); max-width:200px; margin-bottom:12px; }
+.footer-tagline-en { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:12px; color:rgba(250,246,238,.17); }
+.footer-certs { display:flex; gap:7px; flex-wrap:wrap; margin-top:13px; }
+.cert { font-size:8px; letter-spacing:1.5px; text-transform:uppercase; border:1px solid rgba(200,132,42,.11); color:rgba(250,246,238,.26); padding:3px 9px; }
+.footer-col-title { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--honey); margin-bottom:14px; }
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.footer-links a { font-size:12px; color:rgba(250,246,238,.3); text-decoration:none; transition:color .25s; }
+.footer-links a:hover { color:rgba(250,246,238,.7); }
+.footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.footer-copy { font-size:10px; color:rgba(250,246,238,.17); }
+.footer-socials { display:flex; gap:7px; }
+.social-link { width:28px; height:28px; border:1px solid rgba(200,132,42,.11); display:flex; align-items:center; justify-content:center; font-size:11px; color:rgba(250,246,238,.26); text-decoration:none; transition:all .25s; }
+.social-link:hover { border-color:var(--honey); color:var(--honey); }
+
+/* ── FLOATING QUIZ ── */
+.float-quiz {
+  position:fixed; bottom:24px; right:24px; z-index:150;
+  background:var(--honey); color:var(--cream);
+  padding:12px 20px; font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  border:none; cursor:pointer; font-family:'DM Sans',sans-serif;
+  display:flex; align-items:center; gap:7px;
+  box-shadow:0 8px 28px rgba(200,132,42,.38);
+  transition:all .3s; text-decoration:none;
+  animation:floatIn .6s .9s ease both;
+}
+.float-quiz:hover { background:var(--bark); }
+@keyframes floatIn { from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);} }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero,.quiz-section,.science-inner,.gift-section,.global-section{grid-template-columns:1fr;}
+  .hero-right{min-height:280px;}
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .protocols-grid,.testi-grid,.footer-top{grid-template-columns:1fr;}
+  .nav-center{display:none;}
+  .affiliate-inner{flex-direction:column;}
+  .lang-bar,.channels-inner{flex-wrap:wrap;gap:12px;}
+  :root{--section-pad:60px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING QUIZ -->
+<a href="#quiz" class="float-quiz">&#127855; Cek Balance Tubuhmu</a>
+
+<!-- LANGUAGE BAR -->
+<!-- [shopify-section: language-bar] -->
+<div class="lang-bar">
+  <div class="lang-bar-left">&#127760; Available in &nbsp;<span>Indonesia &middot; Singapore &middot; Japan &middot; Coming: Middle East &middot; US &middot; Europe</span></div>
+  <div class="lang-switcher">
+    <button class="lang-btn active">ID</button>
+    <button class="lang-btn">EN</button>
+    <button class="lang-btn">JP</button>
+    <button class="lang-btn" style="opacity:.4;">AR</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<!-- [shopify-section: header] -->
+<nav class="nav" id="main-nav">
+  <a href="#" class="nav-logo">ONESTA <span class="nav-logo-dot"></span></a>
+  <ul class="nav-center">
+    <li><a href="#quiz">Balance Check</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#protocols">Protocols</a></li>
+    <li><a href="#gift">Gifts &amp; B2B</a></li>
+    <li><a href="#affiliate">Affiliates</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn-ghost" onclick="document.getElementById('quiz').scrollIntoView()">Cek Balance</button>
+    <a href="#products" class="nav-btn">Shop Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<!-- [shopify-section: hero-split] -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Stingless Bee Wellness Honey &middot; Indonesia</div>
+    <h1 class="hero-h1">Tubuhmu butuh<br><em>keseimbangan,</em><br>bukan suplemen biasa.</h1>
+    <p class="hero-sub-en">Your body needs balance, not just another supplement.</p>
+    <p class="hero-body">Onesta adalah madu wellness dari lebah tanpa sengat Indonesia &mdash; <strong>kaya Trehalulose, traceable dari sarang ke botol,</strong> dan dirancang sebagai fondasi keseimbangan metabolik harianmu.</p>
+    <div class="hero-ctas">
+      <a href="#quiz" class="btn-quiz">Ada Apa Dengan Balance? &rarr;</a>
+      <a href="#products" class="btn-ghost">Lihat Produk</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-pill">&#10003; Halal Certified</div>
+      <div class="trust-pill">&#128269; Digitally Traceable</div>
+      <div class="trust-pill">&#127807; 100% Raw &amp; Ripe</div>
+      <div class="trust-pill">&#9879; Science-Backed</div>
+      <div class="trust-pill">&#127758; Global Export Ready</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-bg"></div>
+    <svg class="hero-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hex" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+          <polygon points="30,2 58,17 58,47 30,52 2,47 2,17" fill="none" stroke="#C8842A" stroke-width="0.8"/>
+        </pattern>
+      </defs>
+      <rect width="600" height="700" fill="url(#hex)"/>
+    </svg>
+    <div class="manuka-badge">
+      <div class="manuka-badge-label">Positioning</div>
+      <div class="manuka-badge-text">"Indonesia's Manuka"</div>
+    </div>
+    <div class="hero-stat-badge">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Total Activity<br>(TA) Score</div>
+    </div>
+    <div class="hero-right-content">
+      <div class="hero-product-label">Featured Product</div>
+      <div class="hero-product-name">Onesta <em>Daily</em></div>
+      <p class="hero-product-desc">Fondasi wellness harianmu. Kaya Trehalulose, mendukung metabolisme &amp; energi stabil sepanjang hari.</p>
+      <div class="hero-product-price">Rp 320.000 <span>190g</span></div>
+      <button class="hero-add-btn">+ Tambah ke Keranjang</button>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<!-- [shopify-section: trust-ticker] -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Honest Honey&trade;</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Living Honey&trade;</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Indonesia's Manuka &mdash; and More</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Digitally Traceable &mdash; Hive to Bottle</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Halal Certified &middot; NKV Certified</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Say No to Honey Laundering&trade;</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Ripe &middot; Raw &middot; Natural &middot; Pure</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Blockchain Traceability V2 &mdash; Coming</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Stingless Bee Wellness Honey</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Honest Honey&trade;</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Living Honey&trade;</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Indonesia's Manuka &mdash; and More</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Digitally Traceable &mdash; Hive to Bottle</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Halal Certified &middot; NKV Certified</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Say No to Honey Laundering&trade;</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Ripe &middot; Raw &middot; Natural &middot; Pure</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Blockchain Traceability V2 &mdash; Coming</span><span class="ticker-dot">&diams;</span>
+    <span class="ticker-item">Stingless Bee Wellness Honey</span><span class="ticker-dot">&diams;</span>
+  </div>
+</div>
+
+<!-- VIRAL HOOK BANNER -->
+<!-- [shopify-section: viral-hook] -->
+<div class="viral-hook">
+  <div>
+    <div class="viral-hook-label">Global Positioning</div>
+    <h2 class="viral-hook-headline">"Indonesia's Answer<br>to <em>Manuka</em> &mdash;<br>and Potentially Much More."</h2>
+    <p class="viral-hook-sub">Manuka honey adalah standar emas wellness global. Onesta membawa sesuatu yang berbeda &mdash; madu lebah tanpa sengat asli Indonesia dengan Trehalulose, propolis, dan sistem bioaktif yang tidak dimiliki Manuka. Dengan blockchain traceability, dunia bisa mempercayainya.</p>
+  </div>
+  <div class="viral-hook-stats">
+    <div class="vhstat"><div class="vhstat-num">4+</div><div class="vhstat-label">Tahun<br>Riset</div></div>
+    <div class="vhstat"><div class="vhstat-num">22+</div><div class="vhstat-label">SKU<br>Tersedia</div></div>
+    <div class="vhstat"><div class="vhstat-num">15+</div><div class="vhstat-label">TA<br>Score</div></div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<!-- [shopify-section: balance-quiz] -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-left">
+    <div class="section-label">Metabolic Balance Diagnostic</div>
+    <h2 class="section-title">Ada Apa Dengan<br><em>Balance</em>-mu?</h2>
+    <p class="section-title-en">What's happening with your metabolic balance?</p>
+    <p style="font-size:14px;line-height:1.9;color:var(--muted);max-width:400px;margin-bottom:26px;">Tubuh yang tidak seimbang sering memberi sinyal &mdash; tapi kita jarang mendengarnya. Quiz diagnostik kami menganalisis <strong style="color:var(--bark);font-weight:500;">5 domain metabolik</strong> untuk membangun protokol wellness personal yang tepat untukmu.</p>
+    <div class="quiz-domains">
+      <div class="quiz-domain"><span class="quiz-domain-icon">&#9889;</span> Energy &amp; Fatigue</div>
+      <div class="quiz-domain"><span class="quiz-domain-icon">&#129656;</span> Blood Sugar</div>
+      <div class="quiz-domain"><span class="quiz-domain-icon">&#129504;</span> Hormonal Balance</div>
+      <div class="quiz-domain"><span class="quiz-domain-icon">&#127807;</span> Gut &amp; Digestion</div>
+      <div class="quiz-domain"><span class="quiz-domain-icon">&#128737;</span> Immune &amp; Inflammation</div>
+      <div class="quiz-domain"><span class="quiz-domain-icon">&#128202;</span> Balance Score + Profile</div>
+    </div>
+    <p class="quiz-meta">&#9200; 5&ndash;7 menit &nbsp;&middot;&nbsp; Gratis &nbsp;&middot;&nbsp; Hasil bisa dibagikan</p>
+    <a href="#" class="btn-quiz" style="width:fit-content;">Mulai Diagnostik &rarr;</a>
+  </div>
+  <div class="quiz-right" id="quiz-card">
+    <div class="quiz-card-label">Ada Apa Dengan Balance? &middot; Live Preview</div>
+    <div class="quiz-step-indicator">
+      <div class="quiz-dot done"></div><div class="quiz-dot active"></div>
+      <div class="quiz-dot"></div><div class="quiz-dot"></div><div class="quiz-dot"></div>
+      <div class="quiz-dot"></div><div class="quiz-dot"></div><div class="quiz-dot"></div>
+      <div class="quiz-dot"></div><div class="quiz-dot"></div>
+    </div>
+    <p class="quiz-q">Seberapa sering kamu merasa <em>lelah</em> meski sudah cukup tidur?</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" onclick="selectOpt(this)">Hampir setiap hari &mdash; ini sudah jadi normal bagiku</button>
+      <button class="quiz-opt" onclick="selectOpt(this)">Beberapa kali seminggu</button>
+      <button class="quiz-opt selected" onclick="selectOpt(this)">Sesekali, tidak terlalu sering</button>
+      <button class="quiz-opt" onclick="selectOpt(this)">Jarang atau tidak pernah</button>
+    </div>
+    <div class="quiz-footer">
+      <span class="quiz-progress-text">Pertanyaan 2 dari 10</span>
+      <button class="quiz-next" onclick="showResult()">Lanjut &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- VIRAL: SHARE RESULT CARD DEMO -->
+<!-- [shopify-section: share-result] — generated after quiz completion -->
+<div class="share-card-demo" id="result-demo" style="display:none;">
+  <div class="share-card-content">
+    <div class="share-card-eyebrow">Onesta Balance Score &middot; Hasil Diagnostikmu</div>
+    <div class="share-card-score-label">Balance Score</div>
+    <div class="share-card-score">68<span>/100</span></div>
+    <div class="share-card-profile">Profil: <em>Energy Depleted</em></div>
+    <p class="share-card-desc">Metabolismemu menunjukkan tanda kelelahan energi kronis dengan beban inflamasi ringan. Rekomendasimu: Onesta Daily + Imunisi Protocol selama 30 hari.</p>
+    <div class="share-card-cta-row">
+      <button class="share-btn">&#128279; Bagikan Hasilku</button>
+      <button class="share-btn-outline">&#128247; Save as Image</button>
+      <button class="share-btn" style="background:var(--forest);">Lihat Produk Rekomendasi &rarr;</button>
+    </div>
+    <p class="share-card-note">&#128270; Hasil ini bukan diagnosis medis. Konsultasikan dengan dokter untuk penanganan lebih lanjut.</p>
+  </div>
+  <div class="share-card-right">
+    <div class="share-card-logo">ONESTA</div>
+    <div class="share-card-domains">
+      <div class="share-domain-bar">
+        <span class="share-domain-name">Energy</span>
+        <div class="share-domain-track"><div class="share-domain-fill low" style="width:35%"></div></div>
+      </div>
+      <div class="share-domain-bar">
+        <span class="share-domain-name">Blood Sugar</span>
+        <div class="share-domain-track"><div class="share-domain-fill" style="width:72%"></div></div>
+      </div>
+      <div class="share-domain-bar">
+        <span class="share-domain-name">Hormonal</span>
+        <div class="share-domain-track"><div class="share-domain-fill" style="width:58%"></div></div>
+      </div>
+      <div class="share-domain-bar">
+        <span class="share-domain-name">Gut</span>
+        <div class="share-domain-track"><div class="share-domain-fill" style="width:80%"></div></div>
+      </div>
+      <div class="share-domain-bar">
+        <span class="share-domain-name">Immune</span>
+        <div class="share-domain-track"><div class="share-domain-fill low" style="width:45%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<!-- [shopify-section: product-collection] -->
+<section class="products-section" id="products">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Our Products</div>
+      <h2 class="section-title">Temukan Madu<br><em>yang Tepat</em> Untukmu</h2>
+      <p class="section-title-en">Find the honey that's right for your balance</p>
+    </div>
+    <a href="#" class="view-all">Semua Produk</a>
+  </div>
+  <div class="product-tabs">
+    <button class="ptab active" onclick="switchTab(this)">Daily Foundation</button>
+    <button class="ptab" onclick="switchTab(this)">Targeted Wellness</button>
+    <button class="ptab" onclick="switchTab(this)">Signature Botanical</button>
+    <button class="ptab" onclick="switchTab(this)">Forest Gold</button>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img pc-daily">
+        <div class="product-img-bg"><span class="product-hex">&#127855;</span></div>
+        <span class="product-badge">Bestseller</span>
+        <div class="product-overlay"><button class="product-overlay-btn">+ Add to Cart</button></div>
+      </div>
+      <p class="product-cat">Daily Foundation</p>
+      <h3 class="product-name">Onesta Daily</h3>
+      <p class="product-tagline">Metabolic balance untuk kehidupan aktif sehari-hari</p>
+      <div class="product-bottom"><span class="product-price">Rp 320.000</span><button class="add-cart">+</button></div>
+    </div>
+    <div class="product-card">
+      <div class="product-img pc-daily">
+        <div class="product-img-bg"><span class="product-hex">&#128027;</span></div>
+        <span class="product-badge new">New</span>
+        <div class="product-overlay"><button class="product-overlay-btn">+ Add to Cart</button></div>
+      </div>
+      <p class="product-cat">Daily Foundation</p>
+      <h3 class="product-name">Onesta Junior</h3>
+      <p class="product-tagline">Imunitas &amp; tumbuh kembang optimal untuk anak</p>
+      <div class="product-bottom"><span class="product-price">Rp 285.000</span><button class="add-cart">+</button></div>
+    </div>
+    <div class="product-card">
+      <div class="product-img pc-targeted">
+        <div class="product-img-bg"><span class="product-hex">&#128137;</span></div>
+        <span class="product-badge">Targeted</span>
+        <div class="product-overlay"><button class="product-overlay-btn">+ Add to Cart</button></div>
+      </div>
+      <p class="product-cat">Targeted Wellness</p>
+      <h3 class="product-name">Diabee</h3>
+      <p class="product-tagline">Formula khusus mendukung kestabilan gula darah</p>
+      <div class="product-bottom"><span class="product-price">Rp 380.000</span><button class="add-cart">+</button></div>
+    </div>
+    <div class="product-card">
+      <div class="product-img pc-botanical">
+        <div class="product-img-bg"><span class="product-hex">&#127807;</span></div>
+        <span class="product-badge">Botanical</span>
+        <div class="product-overlay"><button class="product-overlay-btn">+ Add to Cart</button></div>
+      </div>
+      <p class="product-cat">Signature Botanical</p>
+      <h3 class="product-name">Myrta</h3>
+      <p class="product-tagline">Dari lebah hutan Belitung &mdash; nektar Myrtaceae</p>
+      <div class="product-bottom"><span class="product-price">Rp 420.000</span><button class="add-cart">+</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<!-- [shopify-section: science-callout] -->
+<section class="science-section" id="science">
+  <div class="science-bg-text">LIVING<br>HONEY</div>
+  <div class="science-inner">
+    <div>
+      <div class="section-label sci-label">The Science of Living Honey</div>
+      <h2 class="section-title sci-title">Bukan Sekadar<br>Madu Biasa.<br><em>Living Honey.</em></h2>
+      <p class="section-title-en sci-title-en">Not just honey. A living functional food system.</p>
+      <p class="science-body">Onesta adalah satu-satunya madu Indonesia di <strong>Level 4 &mdash; Stingless Bee Wellness Honey.</strong> Sistem bioaktif lengkap yang bekerja sinergis untuk keseimbanganmu &mdash; melampaui apa yang ditawarkan Manuka.</p>
+      <div class="honey-levels">
+        <div class="honey-level"><span class="level-num">01</span><div><div class="level-title">Adulterated Honey</div><div class="level-desc">Dicampur sirup, air, atau zat undeclared</div></div></div>
+        <div class="honey-level"><span class="level-num">02</span><div><div class="level-title">Inferior Honey</div><div class="level-desc">Asli tapi dipanen muda atau dipanaskan berlebih</div></div></div>
+        <div class="honey-level"><span class="level-num">03</span><div><div class="level-title">Superfood Honey</div><div class="level-desc">Premium dari lebah biasa (Apis mellifera &mdash; Manuka)</div></div></div>
+        <div class="honey-level highlight"><span class="level-num">04</span><div><div class="level-title">Stingless Bee Wellness Honey &larr; ONESTA</div><div class="level-desc">Sistem pangan fungsional hidup &mdash; melampaui semua level</div></div></div>
+      </div>
+    </div>
+    <div class="science-right">
+      <div class="trehalulose-feature">
+        <div class="treha-label">Dominant Bioactive Marker</div>
+        <div class="treha-name"><em>Trehalulose</em></div>
+        <p class="treha-desc">Karbohidrat cerdas eksklusif madu lebah tanpa sengat. Low GI, energi stabil, tanpa spike &amp; crash &mdash; tidak dimiliki Manuka.</p>
+        <div class="treha-pills">
+          <span class="treha-pill">Low GI</span><span class="treha-pill">Steady Energy</span>
+          <span class="treha-pill">No Spike-Crash</span><span class="treha-pill">Metabolic Support</span>
+        </div>
+      </div>
+      <div class="bioactive-grid">
+        <div class="bioactive-card"><div class="bio-icon">&#128737;</div><div class="bio-name">Propolis</div><p class="bio-desc">Antimikroba &amp; anti-inflamasi alami berpotensi tinggi</p></div>
+        <div class="bioactive-card"><div class="bio-icon">&#127807;</div><div class="bio-name">Prebiotics</div><p class="bio-desc">Mendukung microbiome usus yang sehat &amp; seimbang</p></div>
+        <div class="bioactive-card"><div class="bio-icon">&#9879;</div><div class="bio-name">Antioxidants</div><p class="bio-desc">Perlindungan sel dari stres oksidatif</p></div>
+        <div class="bioactive-card"><div class="bio-icon">&#128293;</div><div class="bio-name">Anti-Inflammatory</div><p class="bio-desc">Senyawa aktif pengurang peradangan sistemik</p></div>
+      </div>
+      <div class="trace-bar">
+        <span class="trace-icon">&#128269;</span>
+        <div><div class="trace-title">Onesta Trace&trade; &mdash; Digital Traceability</div><div class="trace-desc">Scan QR &rarr; lacak sarang, panen &amp; lab results real-time</div></div>
+        <button class="trace-cta">Cek Keaslian</button>
+      </div>
+      <div class="blockchain-teaser">
+        <span class="blockchain-icon">&#128279;</span>
+        <div>
+          <div class="blockchain-title">Onesta Trace V2 &mdash; Blockchain Edition</div>
+          <div class="blockchain-desc">Immutable proof of origin &middot; NFT traceability &middot; Global trust infrastructure &middot; Singapore &amp; Japan ready</div>
+        </div>
+        <span class="blockchain-badge">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOLS -->
+<!-- [shopify-section: protocol-grid] -->
+<section class="protocols-section" id="protocols">
+  <div class="protocols-header">
+    <div>
+      <div class="section-label">Expert Wellness Protocols</div>
+      <h2 class="section-title">Protokol Dirancang<br>oleh <em>Para Ahli</em></h2>
+      <p class="section-title-en">Co-created with Indonesia's leading wellness experts</p>
+    </div>
+    <a href="#" class="view-all">Semua Protokol</a>
+  </div>
+  <div class="protocols-grid">
+    <div class="protocol-card">
+      <div class="protocol-featured">
+        <span class="protocol-partner-badge">&#10022; Protocol Partner</span>
+        <div class="protocol-content">
+          <div class="protocol-tag">Performance &amp; Natural Strength</div>
+          <h3 class="protocol-name">Ade Rai x <em>Onesta</em></h3>
+          <p class="protocol-by">Bersama Ade Rai &mdash; "Bapak Bodybuilding Indonesia" &middot; Natural Champion</p>
+          <p class="protocol-desc">Protokol performance berbasis madu lebah tanpa sengat untuk energi alami, pemulihan otot optimal, dan ketahanan metabolik &mdash; tanpa suplemen sintetis.</p>
+          <button class="protocol-cta">Lihat Protokol</button>
+        </div>
+      </div>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-secondary">
+        <span class="protocol-secondary-icon">&#129658;</span>
+        <h3 class="protocol-secondary-name">Metabolic Reset Protocol</h3>
+        <p class="protocol-secondary-by">Bersama Dokter Spesialis Metabolik &middot; Coming Soon</p>
+        <p class="protocol-secondary-desc">Protokol 30 hari untuk reset metabolisme, stabilisasi gula darah &amp; pemulihan keseimbangan hormonal, dirancang bersama dokter klinis.</p>
+        <div class="protocol-secondary-footer">
+          <span class="protocol-secondary-skus">Daily + Diabee + Imunisi</span>
+          <button class="protocol-cta" style="color:var(--honey);border:none;border-bottom:1px solid rgba(200,132,42,.3);background:none;padding-bottom:3px;">Notifikasi</button>
+        </div>
+      </div>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-join">
+        <h3 class="protocol-join-title">Punya <em>Frekuensi</em> yang Sama?</h3>
+        <p class="protocol-join-desc">Kami mencari tokoh wellness, dokter, nutritionist &amp; atlet Indonesia yang percaya pada kekuatan alam dan sains untuk berkolaborasi bersama Onesta.</p>
+        <ul class="protocol-join-list">
+          <li>Co-branded product line</li>
+          <li>Royalti atas setiap penjualan</li>
+          <li>Partner dashboard real-time</li>
+          <li>Quiz &amp; landing page eksklusif</li>
+          <li>ESG &amp; global impact reporting</li>
+        </ul>
+        <button class="protocol-join-btn">Gabung sebagai Protocol Partner &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<!-- [shopify-section: social-proof] -->
+<section class="testi-section">
+  <div class="section-label">What People Say</div>
+  <h2 class="section-title">Mereka Sudah<br><em>Merasakan</em> Perbedaannya</h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p cla
